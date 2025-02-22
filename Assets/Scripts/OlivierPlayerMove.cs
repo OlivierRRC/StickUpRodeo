@@ -1,5 +1,7 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class OlivierPlayerMove : MonoBehaviour
 {
@@ -10,6 +12,9 @@ public class OlivierPlayerMove : MonoBehaviour
     public float lookSpeed = 50f;
     public float jumpForce = 50f;
     public Vector2 pitchRange = new Vector2(-60, 50);
+
+    public Sprite[] honses;
+    public Image honsesImage;
 
     public PlayerInput playerInput;
     private Camera cam;
@@ -36,6 +41,8 @@ public class OlivierPlayerMove : MonoBehaviour
 
         playerInput.actions["Jump"].started += ctx => Jump();
         playerInput.actions["Jump"].canceled += ctx => CancelJump();
+
+        playerInput.actions["Attack"].started += ctx => Shoot();
     }
 
     // Update is called once per frame
@@ -83,6 +90,24 @@ public class OlivierPlayerMove : MonoBehaviour
             rb.mass = 10;
         }
 
+    }
+
+
+    public void TakeDamage(float damage)
+    {
+        Debug.Log("Ouch! " + damage + " damage taken!");
+        honsesImage.sprite = honses[Random.Range(0, honses.Length)];
+        honsesImage.GetComponent<Animator>().SetTrigger("Hurt");
+    }
+
+    public void Shoot()
+    {
+        RaycastHit hit;
+        Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, Mathf.Infinity);
+        if (hit.collider.GetComponent<EnemyBase>())
+        {
+            hit.collider.GetComponent<EnemyBase>().TakeDamage(10);
+        }
     }
 
 }

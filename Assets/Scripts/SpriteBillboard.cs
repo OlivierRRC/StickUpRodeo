@@ -16,6 +16,5 @@ public class SpriteBillboard : MonoBehaviour
     {
         float rotAngle = Mathf.Atan2(transform.position.z - player.transform.position.z, transform.position.x - player.transform.position.x);
         transform.rotation = Quaternion.Inverse( Quaternion.Euler(0, rotAngle*Mathf.Rad2Deg - 90, 0));  
-        print(rotAngle);
     }
 }
