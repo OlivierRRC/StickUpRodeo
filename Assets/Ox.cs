@@ -1,16 +1,43 @@
 using UnityEngine;
 
-public class Ox : MonoBehaviour
+public class Ox : EnemyBase
 {
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void Start()
     {
-        
+        base.Start();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Update()
     {
-        
+        base.Update();
+        agent.destination = player.transform.position;
+
+        if (Vector3.Distance(transform.position, player.transform.position) < attackRange)
+        {
+            if (attackCooldown <= 0)
+            {
+                GetComponent<Rigidbody>().AddForce(-transform.forward * 1000);
+                attackCooldown = 1 / attackSpeed;
+            }
+            else
+            {
+                attackCooldown -= Time.deltaTime;
+            }
+        }
+        else
+        {
+            attackCooldown -= Time.deltaTime;
+        }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<OlivierPlayerMove>().TakeDamage(damage);
+        }
+    }
+
 }
