@@ -143,6 +143,9 @@
         },
         {
             "m_Id": "e7ecfe63e0694ffcbf3ccfa8765ed88e"
+        },
+        {
+            "m_Id": "2c2350ade0cd457db0cd00353518537a"
         }
     ],
     "m_GroupDatas": [
@@ -165,20 +168,6 @@
             "m_InputSlot": {
                 "m_Node": {
                     "m_Id": "f727ea70771f46ac848ca1e99cb19bbc"
-                },
-                "m_SlotId": 0
-            }
-        },
-        {
-            "m_OutputSlot": {
-                "m_Node": {
-                    "m_Id": "00c80c72e46b45b3af7fedb9a5b08149"
-                },
-                "m_SlotId": 0
-            },
-            "m_InputSlot": {
-                "m_Node": {
-                    "m_Id": "6bfeb15744fa41839f45fa7de117a1cd"
                 },
                 "m_SlotId": 0
             }
@@ -235,6 +224,20 @@
             "m_InputSlot": {
                 "m_Node": {
                     "m_Id": "5a1dc17c6ad1415a8e8629719730d8c1"
+                },
+                "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "2c2350ade0cd457db0cd00353518537a"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "6bfeb15744fa41839f45fa7de117a1cd"
                 },
                 "m_SlotId": 0
             }
@@ -760,8 +763,8 @@
     "m_ObjectId": "01831f09fca54bf0a4eec4cb6e1d646d",
     "m_Title": "World Position UV",
     "m_Position": {
-        "x": -4324.00048828125,
-        "y": 1338.0001220703125
+        "x": -4324.0,
+        "y": 1338.0
     }
 }
 
@@ -1352,6 +1355,43 @@
 }
 
 {
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.PositionNode",
+    "m_ObjectId": "2c2350ade0cd457db0cd00353518537a",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Position",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -2150.599853515625,
+            "y": -340.66168212890627,
+            "width": 208.00021362304688,
+            "height": 315.0000305175781
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "f2e1d1f83c304e17b43c87062aec5668"
+        }
+    ],
+    "synonyms": [
+        "location"
+    ],
+    "m_Precision": 1,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 2,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Space": 2,
+    "m_PositionSource": 0
+}
+
+{
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.SampleTexture2DNode",
     "m_ObjectId": "2cbae619f0194cfe917b4b40fcb265c1",
@@ -1677,8 +1717,8 @@
     "m_ObjectId": "36b60896c23c4088849061f1ebee3a97",
     "m_Title": "Time warp",
     "m_Position": {
-        "x": -2870.000244140625,
-        "y": -120.00001525878906
+        "x": -2870.0,
+        "y": -120.0
     }
 }
 
@@ -4471,6 +4511,29 @@
         "e32": 0.0,
         "e33": 1.0
     }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector3MaterialSlot",
+    "m_ObjectId": "f2e1d1f83c304e17b43c87062aec5668",
+    "m_Id": 0,
+    "m_DisplayName": "Out",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "m_Labels": []
 }
 
 {
