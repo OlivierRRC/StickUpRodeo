@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: RAIN_VertexWobble
+  m_Name: enemy
   m_Shader: {fileID: -6465566751694194690, guid: 6bcf0b31511c1df44b0c4e2c42ef119f, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -38,11 +38,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Color:
-        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+        m_Texture: {fileID: 2800000, guid: 3c9932ef6328b4441b511697e0e6fcdb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 1e9462eedcd601f41adb98edc8be3c94, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Triplanar_ca5013f1155e46a88ede00c21f698575_Texture_1_Texture2D:
@@ -63,11 +63,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Intensity: 0.75
-    - _Noise_Scale: 10
+    - _Intensity: 0.6
+    - _Noise_Scale: 50
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Warbble_Speed: 10
+    - _Warbble_Speed: 5
     m_Colors:
     - _CColor: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
