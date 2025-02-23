@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityEngine.UI;
 [RequireComponent(typeof(AudioSource))]
 public class MainMenuManager : MonoBehaviour
 {
-    AudioSource audioClip; 
+    AudioSource audioClip;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

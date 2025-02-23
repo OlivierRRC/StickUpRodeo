@@ -37,6 +37,11 @@ public class OlivierPlayerMove : MonoBehaviour
     private bool reloading;
     public Image healthBar;
 
+    //Sound
+    public AudioSource footstep;
+    public AudioSource reload;
+
+
     void Start()
     {
         cam = Camera.main;
@@ -59,6 +64,7 @@ public class OlivierPlayerMove : MonoBehaviour
         playerInput.actions["Reload"].started += ctx => StartCoroutine(Reload());
 
         playerInput.actions["Escape"].started += ctx => SceneManager.LoadScene(0);
+
     }
 
     // Update is called once per frame
@@ -69,6 +75,12 @@ public class OlivierPlayerMove : MonoBehaviour
 
         cam.transform.localRotation = Quaternion.Euler(new Vector3(pitch, 0, 0));
         transform.rotation *= Quaternion.Euler(new Vector3(0, lookInput.x, 0) * Time.deltaTime * lookSpeed);
+
+        //Jake's Footstep Code
+        if (moveInput != Vector2.zero) 
+        {
+
+        }
     }
 
     private bool isGrounded()
@@ -83,6 +95,16 @@ public class OlivierPlayerMove : MonoBehaviour
         rb.linearVelocity += transform.forward * moveInput.y * moveSpeed;
         rb.linearVelocity += transform.right * moveInput.x * moveSpeed;
         rb.linearVelocity = new Vector3(rb.linearVelocity.x * groundDamping, rb.linearVelocity.y, rb.linearVelocity.z* groundDamping);
+
+        if (rb.linearVelocity.magnitude >= 1)
+        {
+            if (footstep.isPlaying)
+            {
+                return;
+            }
+            footstep.pitch = 1 + (Random.Range(-0.2f, 0.2f));
+            footstep.Play();
+        }
     }
 
     private void Jump()
@@ -161,6 +183,8 @@ public class OlivierPlayerMove : MonoBehaviour
             yield break;
         }
         //trigger animation here
+        reload.pitch = 1 + (Random.Range(-0.2f, 0.2f));
+        reload.Play();
         reloading = true;
         yield return new WaitForSeconds(1);
         ammo = 8;
