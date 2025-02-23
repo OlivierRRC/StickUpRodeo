@@ -190,6 +190,7 @@ public class OlivierPlayerMove : MonoBehaviour
         ammo = 8;
         AmmoText.text = ammo + "/8";
         reloading = false;
+        GetComponent<VoiceLineManager>().playReloadVoiceLine();
     }
 
 }
