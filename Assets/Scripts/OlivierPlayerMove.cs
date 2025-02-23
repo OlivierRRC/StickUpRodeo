@@ -42,9 +42,12 @@ public class OlivierPlayerMove : MonoBehaviour
     public AudioSource footstep;
     public AudioSource reload;
 
+    Animator anim;
+
 
     void Start()
     {
+        anim = GetComponentInChildren<Animator>();
         cam = Camera.main;
         rb = GetComponent<Rigidbody>();
 
@@ -163,6 +166,7 @@ public class OlivierPlayerMove : MonoBehaviour
             return;
         }
 
+        anim.SetTrigger("Shoot");
         ammo--;
         AmmoText.text = ammo + "/8";
 
@@ -189,7 +193,8 @@ public class OlivierPlayerMove : MonoBehaviour
 
     public IEnumerator Reload()
     {
-        if(reloading)
+        anim.SetTrigger("Reload");
+        if (reloading)
         {
             yield break;
         }
