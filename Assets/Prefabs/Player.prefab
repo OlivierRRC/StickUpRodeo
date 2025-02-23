@@ -1142,7 +1142,6 @@ GameObject:
   - component: {fileID: 57987512336353991}
   - component: {fileID: 1942289446298898373}
   - component: {fileID: 1539946536194664952}
-  - component: {fileID: 1743673182108653271}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -1280,32 +1279,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2e7e956b7a77ab84ebb493688a58dbd2, type: 3}
   - {fileID: 8300000, guid: a1cf5e93040f31e499de77bffa57b21a, type: 3}
   - {fileID: 8300000, guid: 3f5607f82d8f12b48bf74d909d824ec3, type: 3}
-  reloadVoiceLines:
-  - {fileID: 8300000, guid: 76fdbb3186bb73e45989ccfe760ef421, type: 3}
-  - {fileID: 8300000, guid: 011e7f7e9ee723648b01eb0d2a8b78e7, type: 3}
-  - {fileID: 8300000, guid: debd460d4d4c6e44f955f71657fe8f9a, type: 3}
---- !u!114 &1743673182108653271
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7240127307428820346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b365b105de98f14687416aaa87eca3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  killVoiceLines:
-  - {fileID: 8300000, guid: 39c0d53e252f9ca4e85601d98dc34495, type: 3}
-  - {fileID: 8300000, guid: 1d98fbbca965acc4aa41d43fafb2f9d1, type: 3}
-  - {fileID: 8300000, guid: 30384e1ec6b305a4181cbef28eef554f, type: 3}
-  - {fileID: 8300000, guid: 2d3397c142e13fe43bab99025fbc6fb8, type: 3}
-  - {fileID: 8300000, guid: 3c133e8047fccf94bad88646e3d897b1, type: 3}
-  - {fileID: 8300000, guid: b1ce5e79f0d8afe4fb8dd9a3cd86e7aa, type: 3}
-  - {fileID: 8300000, guid: 877f6c2ed973e4d4d99f999016b88800, type: 3}
-  - {fileID: 8300000, guid: 1989fdac8061cbe40844b593568a33fa, type: 3}
-  - {fileID: 8300000, guid: 47035d7455f4cff4980d2c7d66aa75fb, type: 3}
   reloadVoiceLines:
   - {fileID: 8300000, guid: 76fdbb3186bb73e45989ccfe760ef421, type: 3}
   - {fileID: 8300000, guid: 011e7f7e9ee723648b01eb0d2a8b78e7, type: 3}
