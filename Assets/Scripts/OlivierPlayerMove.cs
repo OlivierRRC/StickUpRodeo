@@ -105,7 +105,7 @@ public class OlivierPlayerMove : MonoBehaviour
             {
                 return;
             }
-            if (isGrounded())
+            if (!isGrounded())
             {
                 return;
             }
