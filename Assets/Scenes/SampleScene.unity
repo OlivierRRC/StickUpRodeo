@@ -1229,6 +1229,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: The Rooster
       objectReference: {fileID: 0}
+    - target: {fileID: 1548921130916191642, guid: 9183e2dc908273f4b95f4d7bd38fad79, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1695797548508296629, guid: 9183e2dc908273f4b95f4d7bd38fad79, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.9295406
@@ -1268,38 +1272,6 @@ PrefabInstance:
     - target: {fileID: 1695797548508296629, guid: 9183e2dc908273f4b95f4d7bd38fad79, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3450490387723025048, guid: 9183e2dc908273f4b95f4d7bd38fad79, type: 3}
-      propertyPath: damage
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3450490387723025048, guid: 9183e2dc908273f4b95f4d7bd38fad79, type: 3}
-      propertyPath: attackRange
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3450490387723025048, guid: 9183e2dc908273f4b95f4d7bd38fad79, type: 3}
-      propertyPath: attackSpeed
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3963608945359343459, guid: 9183e2dc908273f4b95f4d7bd38fad79, type: 3}
-      propertyPath: m_Height
-      value: 1.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3963608945359343459, guid: 9183e2dc908273f4b95f4d7bd38fad79, type: 3}
-      propertyPath: m_Center.y
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6431850292282676592, guid: 9183e2dc908273f4b95f4d7bd38fad79, type: 3}
-      propertyPath: m_Speed
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6431850292282676592, guid: 9183e2dc908273f4b95f4d7bd38fad79, type: 3}
-      propertyPath: m_Height
-      value: 1.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6431850292282676592, guid: 9183e2dc908273f4b95f4d7bd38fad79, type: 3}
-      propertyPath: m_StoppingDistance
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
