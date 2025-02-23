@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: ace32a8e4c7cd20488182741ccc7cc77, type: 2}
     - target: {fileID: 4240846448924255459, guid: 7a75f7f83a2df9447ac31998618b05d3, type: 3}
       propertyPath: m_Speed
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4240846448924255459, guid: 7a75f7f83a2df9447ac31998618b05d3, type: 3}
       propertyPath: m_Height
@@ -90,7 +90,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7557232701649513620, guid: 7a75f7f83a2df9447ac31998618b05d3, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4819122355465820153, guid: 7a75f7f83a2df9447ac31998618b05d3, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8567774127446830089, guid: 7a75f7f83a2df9447ac31998618b05d3, type: 3}

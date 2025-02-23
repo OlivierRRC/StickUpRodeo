@@ -39,6 +39,7 @@ public class Ox : EnemyBase
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<OlivierPlayerMove>().TakeDamage(damage);
+            GetComponent<Rigidbody>().AddForce(transform.forward * 1000);
         }
     }
 
