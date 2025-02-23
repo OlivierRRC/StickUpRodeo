@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 8d2e60083db4f0c498b364edba1df721
+guid: 40fdd79dd1aae7448b2385e312a7b099
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PM3D_Sphere3D1
+    second: {fileID: 2100000, guid: e1ecfb93b3f1be7409e6a805d8d06474, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -35,7 +40,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importPhysicalCameras: 1
