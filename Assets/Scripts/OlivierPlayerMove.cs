@@ -3,6 +3,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class OlivierPlayerMove : MonoBehaviour
@@ -54,6 +55,8 @@ public class OlivierPlayerMove : MonoBehaviour
         playerInput.actions["Attack"].started += ctx => Shoot();
 
         playerInput.actions["Reload"].started += ctx => StartCoroutine(Reload());
+
+        playerInput.actions["Escape"].started += ctx => SceneManager.LoadScene(0);
     }
 
     // Update is called once per frame
