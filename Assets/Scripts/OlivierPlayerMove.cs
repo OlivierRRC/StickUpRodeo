@@ -35,6 +35,7 @@ public class OlivierPlayerMove : MonoBehaviour
     public TMP_Text AmmoText;
     private int ammo = 8;
     private bool reloading;
+    public Image healthBar;
 
     void Start()
     {
@@ -110,7 +111,7 @@ public class OlivierPlayerMove : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        Debug.Log("Ouch! " + damage + " damage taken!");
+        healthBar.fillAmount = health / 100;
         honsesImage.sprite = honses[Random.Range(0, honses.Length)];
         honsesImage.GetComponent<Animator>().SetTrigger("Hurt");
         health -= damage;
@@ -149,12 +150,8 @@ public class OlivierPlayerMove : MonoBehaviour
             if (hit.collider.GetComponent<EnemyBase>())
             {
                 hit.collider.GetComponent<EnemyBase>().TakeDamage(10);
-
-
             }
         }
-
-
     }
 
     public IEnumerator Reload()
