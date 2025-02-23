@@ -105,6 +105,10 @@ public class OlivierPlayerMove : MonoBehaviour
             {
                 return;
             }
+            if (isGrounded())
+            {
+                return;
+            }
             footstep.pitch = 1 + (Random.Range(-0.2f, 0.2f));
             footstep.Play();
         }
