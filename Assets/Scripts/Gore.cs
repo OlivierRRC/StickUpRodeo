@@ -4,6 +4,8 @@ public class Gore : MonoBehaviour
 {
     public Rigidbody body;
     public GameObject particles;
+    public AudioSource audioSource;
+    public AudioClip audioClip;
     public float hitForce = 10;
 
     public int healthMax = 3;
@@ -25,7 +27,7 @@ public class Gore : MonoBehaviour
         else
         {
             body.AddForce(Vector3.up * hitForce, ForceMode.Impulse);
-
+            audioSource.PlayOneShot(audioClip);
         }
 
     }
