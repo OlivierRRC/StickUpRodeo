@@ -180,6 +180,10 @@ public class OlivierPlayerMove : MonoBehaviour
             {
                 hit.collider.GetComponent<EnemyBase>().TakeDamage(10);
             }
+            else if (hit.collider.GetComponent<Gore>())
+            {
+                hit.collider.GetComponent<Gore>().BoomBoom();
+            }
         }
     }
 

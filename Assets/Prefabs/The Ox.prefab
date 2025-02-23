@@ -119,3 +119,4 @@ MonoBehaviour:
   damage: 10
   attackSpeed: 0.3333333
   attackRange: 12
+  gore: {fileID: 3023360309793157011, guid: bd74907117753314f8a827eae4a9fc18, type: 3}

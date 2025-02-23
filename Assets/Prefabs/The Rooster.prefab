@@ -107,4 +107,5 @@ MonoBehaviour:
   damage: 7
   attackSpeed: 0.5
   attackRange: 10
+  gore: {fileID: 3023360309793157011, guid: bd74907117753314f8a827eae4a9fc18, type: 3}
   shotPrefab: {fileID: 6062483158155675385, guid: 966beb58d1696b04baa979d250a9a5f8, type: 3}

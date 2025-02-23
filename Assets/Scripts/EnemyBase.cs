@@ -13,6 +13,8 @@ public class EnemyBase : MonoBehaviour
     public float attackSpeed = 1f;
     public float attackRange = 1f;
 
+    public GameObject gore;
+
     protected float attackCooldown = 0f;
     protected GameObject player;
     protected NavMeshAgent agent;
@@ -48,6 +50,8 @@ public class EnemyBase : MonoBehaviour
         if (health <= 0)
         {
             player.GetComponent<VoiceLineManager>().PlayKillVoiceLine();
+            var obj = Instantiate(gore);
+            obj.transform.position = transform.position + Vector3.up;
             Destroy(gameObject);
         }
     }

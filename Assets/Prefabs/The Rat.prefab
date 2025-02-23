@@ -632,6 +632,7 @@ MonoBehaviour:
   damage: 3
   attackSpeed: 1
   attackRange: 2
+  gore: {fileID: 3023360309793157011, guid: bd74907117753314f8a827eae4a9fc18, type: 3}
 --- !u!136 &6096070657059028720
 CapsuleCollider:
   m_ObjectHideFlags: 0
