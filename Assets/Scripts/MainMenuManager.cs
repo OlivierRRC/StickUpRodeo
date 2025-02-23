@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 [RequireComponent(typeof(AudioSource))]
@@ -20,6 +21,12 @@ public class MainMenuManager : MonoBehaviour
 
     public void StartGame(string scene)
     {
+        StartCoroutine(delayedStart(scene));
+        
+    }
+    IEnumerator delayedStart(string scene)
+    {
+        yield return new WaitForSeconds(audioClip.clip.length);
         UnityEngine.SceneManagement.SceneManager.LoadScene(scene);
     }
 
