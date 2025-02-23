@@ -240,6 +240,11 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 1
+--- !u!1 &437645895 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7240127307428820346, guid: 712eece4daab19245ba52ea4fa88814c, type: 3}
+  m_PrefabInstance: {fileID: 8151219901345935086}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &443055148
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,6 +906,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1829729897065413305, guid: 712eece4daab19245ba52ea4fa88814c, type: 3}
   m_PrefabInstance: {fileID: 8151219901345935086}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1461609261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437645895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b365b105de98f14687416aaa87eca3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  killVoiceLines:
+  - {fileID: 8300000, guid: 39c0d53e252f9ca4e85601d98dc34495, type: 3}
+  - {fileID: 8300000, guid: 1d98fbbca965acc4aa41d43fafb2f9d1, type: 3}
+  - {fileID: 8300000, guid: 30384e1ec6b305a4181cbef28eef554f, type: 3}
+  - {fileID: 8300000, guid: 2d3397c142e13fe43bab99025fbc6fb8, type: 3}
+  - {fileID: 8300000, guid: 3c133e8047fccf94bad88646e3d897b1, type: 3}
+  - {fileID: 8300000, guid: b1ce5e79f0d8afe4fb8dd9a3cd86e7aa, type: 3}
+  - {fileID: 8300000, guid: 877f6c2ed973e4d4d99f999016b88800, type: 3}
+  - {fileID: 8300000, guid: 1989fdac8061cbe40844b593568a33fa, type: 3}
+  - {fileID: 8300000, guid: 47035d7455f4cff4980d2c7d66aa75fb, type: 3}
+  reloadVoiceLines:
+  - {fileID: 8300000, guid: 76fdbb3186bb73e45989ccfe760ef421, type: 3}
+  - {fileID: 8300000, guid: 011e7f7e9ee723648b01eb0d2a8b78e7, type: 3}
+  - {fileID: 8300000, guid: debd460d4d4c6e44f955f71657fe8f9a, type: 3}
 --- !u!1 &1481269348
 GameObject:
   m_ObjectHideFlags: 0
@@ -1515,7 +1546,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1829729897065413305, guid: 712eece4daab19245ba52ea4fa88814c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1982312678}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7240127307428820346, guid: 712eece4daab19245ba52ea4fa88814c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1461609261}
   m_SourcePrefab: {fileID: 100100000, guid: 712eece4daab19245ba52ea4fa88814c, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
