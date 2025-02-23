@@ -23,7 +23,7 @@ public class Rat : EnemyBase
         {
             if (attackCooldown <= 0)
             {
-                print("Attack");
+                GetComponent<Animator>().SetTrigger("Attack");
                 player.GetComponent<OlivierPlayerMove>().TakeDamage(damage);
                 attackCooldown = 1/ attackSpeed;
             }
