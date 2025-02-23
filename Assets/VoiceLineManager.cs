@@ -22,7 +22,7 @@ public class VoiceLineManager : MonoBehaviour
         if (killVoiceLines.Length > 0)
         {
             int index = Random.Range(0, killVoiceLines.Length);
-            AudioSource.PlayClipAtPoint(killVoiceLines[index], Camera.main.transform.position,100);
+            AudioSource.PlayClipAtPoint(killVoiceLines[index], Camera.main.transform.position);
         }
     }
 
