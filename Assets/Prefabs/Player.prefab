@@ -1345,7 +1345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   groundDamping: 0.94
-  lookSpeed: 50
+  lookSpeed: 0.6
   jumpForce: 5
   pitchRange: {x: -60, y: 50}
   health: 100
