@@ -122,7 +122,7 @@ MonoBehaviour:
   audioSource: {fileID: 1200142309603062004}
   audioClip: {fileID: 8300000, guid: d95693a0a6466754bb4b0b315d1360fe, type: 3}
   hitForce: 10
-  healthMax: 5
+  healthMax: 3
 --- !u!64 &480370321057284115
 MeshCollider:
   m_ObjectHideFlags: 0
