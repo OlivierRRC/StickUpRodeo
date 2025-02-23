@@ -14,6 +14,7 @@ public class EnemyBase : MonoBehaviour
     protected float attackCooldown = 0f;
     protected GameObject player;
     protected NavMeshAgent agent;
+    private ParticleSystem hitParticle;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -21,6 +22,7 @@ public class EnemyBase : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
+        hitParticle = GetComponentInChildren<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -43,6 +45,7 @@ public class EnemyBase : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+        hitParticle.Play();
         if (health <= 0)
         {
             Destroy(gameObject);
