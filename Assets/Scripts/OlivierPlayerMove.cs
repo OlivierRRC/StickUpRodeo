@@ -15,6 +15,7 @@ public class OlivierPlayerMove : MonoBehaviour
     public float lookSpeed = 50f;
     public float jumpForce = 50f;
     public Vector2 pitchRange = new Vector2(-60, 50);
+    public float health = 100f;
 
     public Sprite[] honses;
     public Image honsesImage;
@@ -112,6 +113,11 @@ public class OlivierPlayerMove : MonoBehaviour
         Debug.Log("Ouch! " + damage + " damage taken!");
         honsesImage.sprite = honses[Random.Range(0, honses.Length)];
         honsesImage.GetComponent<Animator>().SetTrigger("Hurt");
+        health -= damage;
+        if (health <= 0)
+        {
+            SceneManager.LoadScene("Lose");
+        }
     }
 
     public void Shoot()
