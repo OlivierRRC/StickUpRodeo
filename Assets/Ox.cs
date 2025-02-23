@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Ox : EnemyBase
 {
@@ -7,6 +8,7 @@ public class Ox : EnemyBase
     public override void Start()
     {
         base.Start();
+        StartCoroutine(TargetLoop());
     }
 
     public override void Update()
@@ -38,6 +40,13 @@ public class Ox : EnemyBase
         {
             collision.gameObject.GetComponent<OlivierPlayerMove>().TakeDamage(damage);
         }
+    }
+
+    IEnumerator TargetLoop()
+    {
+        yield return new WaitForSeconds(1);
+        agent.destination = player.transform.position;
+        StartCoroutine(TargetLoop());
     }
 
 }

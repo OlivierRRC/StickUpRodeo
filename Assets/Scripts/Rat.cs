@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -10,12 +11,13 @@ public class Rat : EnemyBase
     {
         base.Start();
         randomizedTarget = Random.insideUnitCircle * 1;
+        agent.destination = player.transform.position + new Vector3(randomizedTarget.x, 0, randomizedTarget.y);
+        StartCoroutine(TargetLoop());
     }
 
     public override void Update()
     {
         base.Update();
-        agent.destination = player.transform.position + new Vector3(randomizedTarget.x, 0, randomizedTarget.y);
 
         if(Vector3.Distance(transform.position, player.transform.position) < attackRange)
         {
@@ -34,6 +36,13 @@ public class Rat : EnemyBase
         {
             attackCooldown -= Time.deltaTime;
         }
+    }
+
+    IEnumerator TargetLoop()
+    {
+        yield return new WaitForSeconds(1);
+        agent.destination = player.transform.position + new Vector3(randomizedTarget.x, 0, randomizedTarget.y);
+        StartCoroutine(TargetLoop());
     }
 
 }

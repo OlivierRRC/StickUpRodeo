@@ -1,3 +1,5 @@
+using System.Collections;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -25,6 +27,13 @@ public class OlivierPlayerMove : MonoBehaviour
     private float pitch;
     private LayerMask mask;
 
+    public GameObject hitParticles;
+    public GameObject bulletPrefab;
+
+    public TMP_Text AmmoText;
+    private int ammo = 8;
+    private bool reloading;
+
     void Start()
     {
         cam = Camera.main;
@@ -43,6 +52,8 @@ public class OlivierPlayerMove : MonoBehaviour
         playerInput.actions["Jump"].canceled += ctx => CancelJump();
 
         playerInput.actions["Attack"].started += ctx => Shoot();
+
+        playerInput.actions["Reload"].started += ctx => StartCoroutine(Reload());
     }
 
     // Update is called once per frame
@@ -102,12 +113,53 @@ public class OlivierPlayerMove : MonoBehaviour
 
     public void Shoot()
     {
+        if(reloading)
+        {
+            return;
+        }
+
+        if (ammo <= 0)
+        {
+            StartCoroutine(Reload());
+            return;
+        }
+
+        ammo--;
+        AmmoText.text = ammo + "/8";
+
         RaycastHit hit;
         Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, Mathf.Infinity);
-        if (hit.collider.GetComponent<EnemyBase>())
+
+        if(hit.collider != null)
         {
-            hit.collider.GetComponent<EnemyBase>().TakeDamage(10);
+            
+            GameObject bp = Instantiate(bulletPrefab, transform.position + Vector3.up, Quaternion.identity);
+            bp.GetComponent<FakeProjectile>().endPosition = hit.point;
+            Instantiate(hitParticles, hit.point, Quaternion.identity);
+
+            if (hit.collider.GetComponent<EnemyBase>())
+            {
+                hit.collider.GetComponent<EnemyBase>().TakeDamage(10);
+
+
+            }
         }
+
+
+    }
+
+    public IEnumerator Reload()
+    {
+        if(reloading)
+        {
+            yield break;
+        }
+        //trigger animation here
+        reloading = true;
+        yield return new WaitForSeconds(1);
+        ammo = 8;
+        AmmoText.text = ammo + "/8";
+        reloading = false;
     }
 
 }
