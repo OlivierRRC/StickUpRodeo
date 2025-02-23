@@ -44,6 +44,8 @@ public class OlivierPlayerMove : MonoBehaviour
 
     Animator anim;
 
+    public Transform shotPoint;
+
 
     void Start()
     {
@@ -176,7 +178,7 @@ public class OlivierPlayerMove : MonoBehaviour
         if(hit.collider != null)
         {
             
-            GameObject bp = Instantiate(bulletPrefab, transform.position + Vector3.up, Quaternion.identity);
+            GameObject bp = Instantiate(bulletPrefab, shotPoint.position, Quaternion.identity);
             bp.GetComponent<FakeProjectile>().endPosition = hit.point;
             Instantiate(hitParticles, hit.point, Quaternion.identity);
 
