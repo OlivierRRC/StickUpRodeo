@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 0e94c2886d3391842a9fa59c86501ee7
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/Factory_Level.unity
+    guid: a26ca7b762445ca428085d0bf08be6c0
   - enabled: 1
     path: Assets/Scenes/Lose.unity
     guid: 4649356ecef53b843add782005043024

@@ -27,6 +27,7 @@ public class OlivierPlayerMove : MonoBehaviour
     private Vector2 moveInput;
     private Vector2 lookInput;
     private float pitch;
+    private float yaw;
     private LayerMask mask;
 
     public GameObject hitParticles;
@@ -70,11 +71,13 @@ public class OlivierPlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        pitch += -lookInput.y * Time.deltaTime * lookSpeed;
+        pitch += -lookInput.y * lookSpeed;
         pitch = Mathf.Clamp(pitch, pitchRange.x, pitchRange.y);
 
+        yaw += lookInput.x * lookSpeed;
+
         cam.transform.localRotation = Quaternion.Euler(new Vector3(pitch, 0, 0));
-        transform.rotation *= Quaternion.Euler(new Vector3(0, lookInput.x, 0) * Time.deltaTime * lookSpeed);
+        transform.rotation = Quaternion.Euler(new Vector3(0, yaw, 0));
 
         //Jake's Footstep Code
         if (moveInput != Vector2.zero) 
