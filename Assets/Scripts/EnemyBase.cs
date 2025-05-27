@@ -49,7 +49,7 @@ public class EnemyBase : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
-            player.GetComponent<VoiceLineManager>().PlayKillVoiceLine();
+            player.GetComponentInChildren<VoiceLineManager>().PlayKillVoiceLine();
             var obj = Instantiate(gore);
             obj.transform.position = transform.position + Vector3.up;
             Destroy(gameObject);

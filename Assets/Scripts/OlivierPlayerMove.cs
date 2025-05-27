@@ -41,6 +41,7 @@ public class OlivierPlayerMove : MonoBehaviour
     //Sound
     public AudioSource footstep;
     public AudioSource reload;
+    public AudioSource voice;
 
     Animator anim;
 
@@ -149,6 +150,10 @@ public class OlivierPlayerMove : MonoBehaviour
         honsesImage.sprite = honses[Random.Range(0, honses.Length)];
         honsesImage.GetComponent<Animator>().SetTrigger("Hurt");
         health -= damage;
+
+        // added this
+        GetComponentInChildren<VoiceLineManager>().playDamageVoiceLine();
+        //
         if (health <= 0)
         {
             SceneManager.LoadScene("Lose");
@@ -208,7 +213,9 @@ public class OlivierPlayerMove : MonoBehaviour
         ammo = 8;
         AmmoText.text = ammo + "/8";
         reloading = false;
-        GetComponent<VoiceLineManager>().playReloadVoiceLine();
+
+        //changed this
+        GetComponentInChildren<VoiceLineManager>().playReloadVoiceLine();
     }
 
 }

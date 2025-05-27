@@ -1019,11 +1019,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1802286593}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b365b105de98f14687416aaa87eca3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  voice: {fileID: 0}
   killVoiceLines: []
   reloadVoiceLines: []
   damageVoiceLines:
@@ -1107,11 +1108,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1873523914}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b365b105de98f14687416aaa87eca3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  voice: {fileID: 0}
   killVoiceLines: []
   reloadVoiceLines: []
   damageVoiceLines:
@@ -1195,11 +1197,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4184141464192332647}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b365b105de98f14687416aaa87eca3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  voice: {fileID: 0}
   killVoiceLines: []
   reloadVoiceLines: []
   damageVoiceLines:
@@ -1215,26 +1218,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1539946536194664952, guid: 712eece4daab19245ba52ea4fa88814c, type: 3}
-      propertyPath: damageVoiceLines.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1539946536194664952, guid: 712eece4daab19245ba52ea4fa88814c, type: 3}
-      propertyPath: 'damageVoiceLines.Array.data[0]'
-      value: 
-      objectReference: {fileID: 8300000, guid: bd053e6b37a05194f8bd3fe4c4d84e59, type: 3}
-    - target: {fileID: 1539946536194664952, guid: 712eece4daab19245ba52ea4fa88814c, type: 3}
-      propertyPath: 'damageVoiceLines.Array.data[1]'
-      value: 
-      objectReference: {fileID: 8300000, guid: b958ecb9cc780e645bcd90d80aaea5ee, type: 3}
-    - target: {fileID: 1539946536194664952, guid: 712eece4daab19245ba52ea4fa88814c, type: 3}
-      propertyPath: 'damageVoiceLines.Array.data[2]'
-      value: 
-      objectReference: {fileID: 8300000, guid: d2f3b45189779b74e83310eda49c914f, type: 3}
-    - target: {fileID: 1539946536194664952, guid: 712eece4daab19245ba52ea4fa88814c, type: 3}
-      propertyPath: 'damageVoiceLines.Array.data[3]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 08c3030e959552642aba322bfce42815, type: 3}
     - target: {fileID: 1829729897065413305, guid: 712eece4daab19245ba52ea4fa88814c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1279,8 +1262,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1743673182108653271, guid: 712eece4daab19245ba52ea4fa88814c, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

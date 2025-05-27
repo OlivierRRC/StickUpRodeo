@@ -3,14 +3,19 @@ using UnityEngine.InputSystem;
 
 public class VoiceLineManager : MonoBehaviour
 {
+    public AudioSource voice;
 
     public AudioClip[] killVoiceLines;
     public AudioClip[] reloadVoiceLines;
     public AudioClip[] damageVoiceLines;
 
+
+    
+
+
     private void Start()
     {
-
+      voice = GetComponent<AudioSource>();
     }
 
     public void PlayKillVoiceLine()
@@ -23,7 +28,10 @@ public class VoiceLineManager : MonoBehaviour
         if (killVoiceLines.Length > 0)
         {
             int index = Random.Range(0, killVoiceLines.Length);
-            AudioSource.PlayClipAtPoint(killVoiceLines[index], Camera.main.transform.position);
+            // AudioSource.PlayClipAtPoint(killVoiceLines[index], Camera.main.transform.position);
+
+            voice.clip = killVoiceLines[index];
+            voice.Play();
         }
     }
 
@@ -37,7 +45,10 @@ public class VoiceLineManager : MonoBehaviour
         if (reloadVoiceLines.Length > 0)
         {
             int index = Random.Range(0, reloadVoiceLines.Length);
-            AudioSource.PlayClipAtPoint(reloadVoiceLines[index], Camera.main.transform.position);
+            // AudioSource.PlayClipAtPoint(reloadVoiceLines[index], Camera.main.transform.position);
+
+            voice.clip = reloadVoiceLines[index];
+            voice.Play();
         }
     }
 
@@ -48,10 +59,13 @@ public class VoiceLineManager : MonoBehaviour
             return;
         }
 
-        if (reloadVoiceLines.Length > 0)
+        if (damageVoiceLines.Length > 0)
         {
             int index = Random.Range(0, damageVoiceLines.Length);
-            AudioSource.PlayClipAtPoint(damageVoiceLines[index], Camera.main.transform.position);
+            // AudioSource.PlayClipAtPoint(damageVoiceLines[index], Camera.main.transform.position);
+
+            voice.clip = damageVoiceLines[index];
+            voice.Play();
         }
     }
 }
