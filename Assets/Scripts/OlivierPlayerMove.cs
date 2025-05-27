@@ -153,7 +153,7 @@ public class OlivierPlayerMove : MonoBehaviour
 
         // added this
         GetComponentInChildren<VoiceLineManager>().playDamageVoiceLine();
-        //
+        // ---
         if (health <= 0)
         {
             SceneManager.LoadScene("Lose");
@@ -216,6 +216,7 @@ public class OlivierPlayerMove : MonoBehaviour
 
         //changed this
         GetComponentInChildren<VoiceLineManager>().playReloadVoiceLine();
+        // ---
     }
 
 }
