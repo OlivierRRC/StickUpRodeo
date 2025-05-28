@@ -195,6 +195,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9100000, guid: ace32a8e4c7cd20488182741ccc7cc77, type: 2}
     - target: {fileID: 1185140824754527494, guid: 7a75f7f83a2df9447ac31998618b05d3, type: 3}
+      propertyPath: 'killVoiceLines.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 3370c329cfd8ff24b9af2b4f6f44b4ab, type: 3}
+    - target: {fileID: 1185140824754527494, guid: 7a75f7f83a2df9447ac31998618b05d3, type: 3}
+      propertyPath: 'killVoiceLines.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 47897cb44867b574babc7963912ed996, type: 3}
+    - target: {fileID: 1185140824754527494, guid: 7a75f7f83a2df9447ac31998618b05d3, type: 3}
+      propertyPath: 'killVoiceLines.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 46dcd488516d7f7489b034b0fdd7d9b3, type: 3}
+    - target: {fileID: 1185140824754527494, guid: 7a75f7f83a2df9447ac31998618b05d3, type: 3}
       propertyPath: 'damageVoiceLines.Array.data[0]'
       value: 
       objectReference: {fileID: 8300000, guid: d5e3b64521b739c46aae4ede4ec1ebad, type: 3}

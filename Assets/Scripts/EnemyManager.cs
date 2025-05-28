@@ -1,9 +1,11 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class EnemyManager : MonoBehaviour
 {
     GameObject[] enemies;
+    public Animator sceneTransition;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,8 +26,14 @@ public class EnemyManager : MonoBehaviour
 
         if (enemies.Length == 0)
         {
-            SceneManager.LoadScene("Win");
-
+            StartCoroutine(TransitionToWin());
         }
+    }
+
+    IEnumerator TransitionToWin()
+    {
+        sceneTransition.SetTrigger("SceneExit");
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("Win");
     }
 }

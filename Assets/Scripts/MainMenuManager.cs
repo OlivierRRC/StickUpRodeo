@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class MainMenuManager : MonoBehaviour
 {
     AudioSource audioClip;
+    public Animator sceneTransition;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,11 +24,12 @@ public class MainMenuManager : MonoBehaviour
     public void StartGame(string scene)
     {
         StartCoroutine(delayedStart(scene));
-        
     }
+
     IEnumerator delayedStart(string scene)
     {
-        yield return new WaitForSeconds(audioClip.clip.length);
+        sceneTransition.SetTrigger("SceneExit");
+        yield return new WaitForSeconds(1);
         UnityEngine.SceneManagement.SceneManager.LoadScene(scene);
     }
 

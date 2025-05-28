@@ -798,7 +798,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   voice: {fileID: 4886983498040059432}
-  killVoiceLines: []
+  killVoiceLines:
+  - {fileID: 8300000, guid: cc541ff19337e914c90997e8837ae75f, type: 3}
+  - {fileID: 8300000, guid: 650920eba8678644bb9b41a46e34bd7b, type: 3}
+  - {fileID: 8300000, guid: fd237256a4693bf4aaa29003f240ddb2, type: 3}
   reloadVoiceLines: []
   damageVoiceLines:
   - {fileID: 8300000, guid: ee6052caa6e21d6498b1621a32580421, type: 3}

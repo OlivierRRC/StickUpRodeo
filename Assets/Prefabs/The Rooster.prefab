@@ -191,6 +191,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1185140824754527494, guid: 7a75f7f83a2df9447ac31998618b05d3, type: 3}
+      propertyPath: 'killVoiceLines.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: ddfdf71a3c7e9cb499d57751967e61d2, type: 3}
+    - target: {fileID: 1185140824754527494, guid: 7a75f7f83a2df9447ac31998618b05d3, type: 3}
+      propertyPath: 'killVoiceLines.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: ecd4f3c21aba28447b7a4cd20fbedc65, type: 3}
+    - target: {fileID: 1185140824754527494, guid: 7a75f7f83a2df9447ac31998618b05d3, type: 3}
+      propertyPath: 'killVoiceLines.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: ff4656fb7dbf2bd46b1b4b148a57eccc, type: 3}
+    - target: {fileID: 1185140824754527494, guid: 7a75f7f83a2df9447ac31998618b05d3, type: 3}
       propertyPath: 'damageVoiceLines.Array.data[0]'
       value: 
       objectReference: {fileID: 8300000, guid: 28f2a9b5193eeaf42bf09612f5b5f06e, type: 3}
