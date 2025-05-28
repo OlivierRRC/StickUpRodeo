@@ -46,6 +46,7 @@ public class OlivierPlayerMove : MonoBehaviour
     public AudioSource SFX; 
 
     Animator anim;
+    public Animator sceneTransition;
 
     public Transform shotPoint;
 
@@ -153,9 +154,17 @@ public class OlivierPlayerMove : MonoBehaviour
         // ---
         if (health <= 0)
         {
-            SceneManager.LoadScene("Lose");
+            StartCoroutine(TransitionToLose());
         }
     }
+
+    IEnumerator TransitionToLose()
+    {
+        sceneTransition.SetTrigger("SceneExit");
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("Lose");
+    }
+
 
     public void Shoot()
     {
