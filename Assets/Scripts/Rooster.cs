@@ -18,8 +18,14 @@ public class Rooster : EnemyBase
     {
         base.Update();
 
-        if (Vector3.Distance(transform.position, player.transform.position) < attackRange)
+        if (!alerted)
         {
+            
+        }
+        else if (Vector3.Distance(transform.position, player.transform.position) < attackRange)
+        {
+            agent.destination = transform.position;
+
             if (attackCooldown <= 0)
             {
                 GameObject shot = Instantiate(shotPrefab, transform.position-transform.forward+transform.up, Quaternion.identity);
@@ -41,7 +47,14 @@ public class Rooster : EnemyBase
     IEnumerator TargetLoop()
     {
         yield return new WaitForSeconds(1);
-        agent.destination = player.transform.position;
+        if (alerted == true)
+        {
+            agent.destination = player.transform.position;
+        }
+        else
+        {
+            agent.destination = transform.position;
+        }
         StartCoroutine(TargetLoop());
     }
 

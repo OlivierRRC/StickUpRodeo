@@ -10,62 +10,68 @@ public class VoiceLineManager : MonoBehaviour
     public AudioClip[] damageVoiceLines;
 
 
-    
-
-
     private void Start()
     {
-      voice = GetComponent<AudioSource>();
+
     }
 
-    public void PlayKillVoiceLine()
+    public void playKillVoiceLine()
     {
-        if(Random.Range(0, 2) != 0)
+        if (!voice.isPlaying)
         {
-            return;
-        }
+            if (Random.Range(0, 2) != 0)
+            {
+                return;
+            }
+            if (killVoiceLines.Length > 0)
+            {
+                int index = Random.Range(0, killVoiceLines.Length);
+                // AudioSource.PlayClipAtPoint(killVoiceLines[index], Camera.main.transform.position);
 
-        if (killVoiceLines.Length > 0)
-        {
-            int index = Random.Range(0, killVoiceLines.Length);
-            // AudioSource.PlayClipAtPoint(killVoiceLines[index], Camera.main.transform.position);
-
-            voice.clip = killVoiceLines[index];
-            voice.Play();
+                voice.clip = killVoiceLines[index];
+                voice.Play();
+            }
         }
     }
 
     public void playReloadVoiceLine()
     {
-        if (Random.Range(0, 1) != 0)
+        if (!voice.isPlaying)
         {
-            return;
-        }
+            if (Random.Range(0, 1) != 0)
+            {
+                return;
+            }
 
-        if (reloadVoiceLines.Length > 0)
-        {
-            int index = Random.Range(0, reloadVoiceLines.Length);
-            // AudioSource.PlayClipAtPoint(reloadVoiceLines[index], Camera.main.transform.position);
+            if (reloadVoiceLines.Length > 0)
+            {
+                int index = Random.Range(0, reloadVoiceLines.Length);
+                // AudioSource.PlayClipAtPoint(reloadVoiceLines[index], Camera.main.transform.position);
 
-            voice.clip = reloadVoiceLines[index];
-            voice.Play();
+                voice.clip = reloadVoiceLines[index];
+                voice.Play();
+            }
         }
     }
 
     public void playDamageVoiceLine()
     {
-        if (Random.Range(0, 1) != 0)
+        if (!voice.isPlaying)
         {
-            return;
-        }
+            if (Random.Range(0, 1) != 0)
+            {
+                return;
+            }
 
-        if (damageVoiceLines.Length > 0)
-        {
-            int index = Random.Range(0, damageVoiceLines.Length);
-            // AudioSource.PlayClipAtPoint(damageVoiceLines[index], Camera.main.transform.position);
+            if (damageVoiceLines.Length > 0)
+            {
+                int index = Random.Range(0, damageVoiceLines.Length);
+                // AudioSource.PlayClipAtPoint(damageVoiceLines[index], Camera.main.transform.position);
 
-            voice.clip = damageVoiceLines[index];
-            voice.Play();
+                voice.clip = damageVoiceLines[index];
+                voice.Play();
+            }
         }
     }
+
 }

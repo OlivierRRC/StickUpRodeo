@@ -14,23 +14,27 @@ public class Ox : EnemyBase
     public override void Update()
     {
         base.Update();
-        agent.destination = player.transform.position;
 
-        if (Vector3.Distance(transform.position, player.transform.position) < attackRange)
+        if (alerted)
         {
-            if (attackCooldown <= 0)
+            agent.destination = player.transform.position;
+
+            if (Vector3.Distance(transform.position, player.transform.position) < attackRange)
             {
-                GetComponent<Rigidbody>().AddForce(-transform.forward * 1000);
-                attackCooldown = 1 / attackSpeed;
+                if (attackCooldown <= 0)
+                {
+                    GetComponent<Rigidbody>().AddForce(-transform.forward * 1000);
+                    attackCooldown = 1 / attackSpeed;
+                }
+                else
+                {
+                    attackCooldown -= Time.deltaTime;
+                }
             }
             else
             {
                 attackCooldown -= Time.deltaTime;
             }
-        }
-        else
-        {
-            attackCooldown -= Time.deltaTime;
         }
     }
 
@@ -46,7 +50,14 @@ public class Ox : EnemyBase
     IEnumerator TargetLoop()
     {
         yield return new WaitForSeconds(1);
-        agent.destination = player.transform.position;
+        if (alerted == true)
+        {
+            agent.destination = player.transform.position;
+        }
+        else
+        {
+            agent.destination = transform.position;
+        }
         StartCoroutine(TargetLoop());
     }
 

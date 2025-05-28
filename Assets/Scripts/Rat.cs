@@ -11,7 +11,14 @@ public class Rat : EnemyBase
     {
         base.Start();
         randomizedTarget = Random.insideUnitCircle * 1;
-        agent.destination = player.transform.position + new Vector3(randomizedTarget.x, 0, randomizedTarget.y);
+        if (alerted == true)
+        {
+            agent.destination = player.transform.position + new Vector3(randomizedTarget.x, 0, randomizedTarget.y);
+        }
+        else
+        {
+            agent.destination = transform.position + new Vector3(randomizedTarget.x, 0, randomizedTarget.y);
+        }
         StartCoroutine(TargetLoop());
     }
 
@@ -19,7 +26,12 @@ public class Rat : EnemyBase
     {
         base.Update();
 
-        if(Vector3.Distance(transform.position, player.transform.position) < attackRange)
+
+        if (!alerted)
+        {
+
+        }
+        else if(Vector3.Distance(transform.position, player.transform.position) < attackRange)
         {
             if (attackCooldown <= 0)
             {
@@ -41,7 +53,14 @@ public class Rat : EnemyBase
     IEnumerator TargetLoop()
     {
         yield return new WaitForSeconds(1);
-        agent.destination = player.transform.position + new Vector3(randomizedTarget.x, 0, randomizedTarget.y);
+        if (alerted == true)
+        {
+            agent.destination = player.transform.position + new Vector3(randomizedTarget.x, 0, randomizedTarget.y);
+        }
+        else
+        {
+            agent.destination = transform.position + new Vector3(randomizedTarget.x, 0, randomizedTarget.y);
+        }
         StartCoroutine(TargetLoop());
     }
 

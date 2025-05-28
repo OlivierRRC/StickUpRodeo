@@ -36,12 +36,14 @@ public class OlivierPlayerMove : MonoBehaviour
     public TMP_Text AmmoText;
     private int ammo = 8;
     private bool reloading;
+    public TMP_Text healthtext;
     public Image healthBar;
 
     //Sound
     public AudioSource footstep;
     public AudioSource reload;
     public AudioSource voice;
+    public AudioSource SFX; 
 
     Animator anim;
 
@@ -84,12 +86,6 @@ public class OlivierPlayerMove : MonoBehaviour
 
         cam.transform.localRotation = Quaternion.Euler(new Vector3(pitch, 0, 0));
         transform.rotation = Quaternion.Euler(new Vector3(0, yaw, 0));
-
-        //Jake's Footstep Code
-        if (moveInput != Vector2.zero) 
-        {
-
-        }
     }
 
     private bool isGrounded()
@@ -150,7 +146,8 @@ public class OlivierPlayerMove : MonoBehaviour
         honsesImage.sprite = honses[Random.Range(0, honses.Length)];
         honsesImage.GetComponent<Animator>().SetTrigger("Hurt");
         health -= damage;
-
+        healthtext.text = "Vet Bill: $" + (100 - health) * 367;
+        
         // added this
         GetComponentInChildren<VoiceLineManager>().playDamageVoiceLine();
         // ---
@@ -186,10 +183,17 @@ public class OlivierPlayerMove : MonoBehaviour
             GameObject bp = Instantiate(bulletPrefab, shotPoint.position, Quaternion.identity);
             bp.GetComponent<FakeProjectile>().endPosition = hit.point;
             Instantiate(hitParticles, hit.point, Quaternion.identity);
-
+            
             if (hit.collider.GetComponent<EnemyBase>())
             {
                 hit.collider.GetComponent<EnemyBase>().TakeDamage(10);
+            }
+            else if (hit.collider.GetComponentInParent<EnemyBase>())
+            {
+                hit.collider.GetComponentInParent<EnemyBase>().TakeDamage(25);
+
+                SFX.pitch = 1 + (Random.Range(-0.2f, 0.2f));
+                SFX.Play();
             }
             else if (hit.collider.GetComponent<Gore>())
             {
@@ -205,7 +209,7 @@ public class OlivierPlayerMove : MonoBehaviour
         {
             yield break;
         }
-        //trigger animation here
+
         reload.pitch = 1 + (Random.Range(-0.2f, 0.2f));
         reload.Play();
         reloading = true;
@@ -214,8 +218,13 @@ public class OlivierPlayerMove : MonoBehaviour
         AmmoText.text = ammo + "/8";
         reloading = false;
 
+        GetComponentInChildren<ParticleSystem>().Play();
+
         //changed this
-        GetComponentInChildren<VoiceLineManager>().playReloadVoiceLine();
+        if (Random.Range(0, 2) == 0)
+        {
+            GetComponentInChildren<VoiceLineManager>().playReloadVoiceLine();
+        }
         // ---
     }
 
