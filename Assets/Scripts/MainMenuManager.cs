@@ -35,6 +35,13 @@ public class MainMenuManager : MonoBehaviour
 
     public void ExitGame()
     {
+        StartCoroutine(delayedEnd());
+    }
+
+    IEnumerator delayedEnd()
+    {
+        sceneTransition.SetTrigger("SceneExit");
+        yield return new WaitForSeconds(1);
         Application.Quit();
     }
 

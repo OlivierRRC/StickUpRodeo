@@ -24,13 +24,17 @@ public class Rooster : EnemyBase
         }
         else if (Vector3.Distance(transform.position, player.transform.position) < attackRange)
         {
-            agent.destination = transform.position;
+            if (Vector3.Distance(transform.position, player.transform.position) < attackRange - 3)
+            {
+                agent.destination = transform.position;
+            }
+                
 
             if (attackCooldown <= 0)
             {
                 GameObject shot = Instantiate(shotPrefab, transform.position-transform.forward+transform.up, Quaternion.identity);
                 shot.GetComponent<EnemyProjectile>().damage = damage;
-                shot.GetComponent<Rigidbody>().AddForce(-transform.forward * Vector3.Distance(transform.position, player.transform.position)*2, ForceMode.Impulse);
+                shot.GetComponent<Rigidbody>().AddForce((player.transform.position - transform.position) * 2, ForceMode.Impulse);
                 attackCooldown = 1 / attackSpeed;
             }
             else
