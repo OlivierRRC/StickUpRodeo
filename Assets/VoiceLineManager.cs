@@ -42,7 +42,7 @@ public class VoiceLineManager : MonoBehaviour
     {
         if (!voice.isPlaying)
         {
-            if (UnityEngine.Random.Range(0, 2) != 0)
+            if (UnityEngine.Random.Range(0, 3) == 0)
             {
                 return;
             }
