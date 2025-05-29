@@ -11,14 +11,7 @@ public class Rat : EnemyBase
     {
         base.Start();
         randomizedTarget = Random.insideUnitCircle * 1;
-        if (alerted == true)
-        {
-            agent.destination = player.transform.position + new Vector3(randomizedTarget.x, 0, randomizedTarget.y);
-        }
-        else
-        {
-            agent.destination = transform.position + new Vector3(randomizedTarget.x, 0, randomizedTarget.y);
-        }
+        // Start the targetting Loop
         StartCoroutine(TargetLoop());
     }
 
@@ -26,13 +19,15 @@ public class Rat : EnemyBase
     {
         base.Update();
 
-
+        // If the enemy isn't alerted, skip the rest of the function.
         if (!alerted)
         {
-
+            return;
         }
-        else if(Vector3.Distance(transform.position, player.transform.position) < attackRange)
+        // Otherwise if the rat is within attack range...
+        else if (Vector3.Distance(transform.position, player.transform.position) < attackRange)
         {
+            // Once attack cooldown reaches its end, the rat takes a swipe attack at the player.
             if (attackCooldown <= 0)
             {
                 GetComponent<Animator>().SetTrigger("Attack");
@@ -52,15 +47,19 @@ public class Rat : EnemyBase
 
     IEnumerator TargetLoop()
     {
+        // This loop runs once a second, updating NavMesh destination accordingly.
         yield return new WaitForSeconds(1);
+        // If the enemy has been alerted, it starts moving towards a point within melee range of the player
         if (alerted == true)
         {
             agent.destination = player.transform.position + new Vector3(randomizedTarget.x, 0, randomizedTarget.y);
         }
+        // Otherwise, it just sits still, patiently waiting.
         else
         {
-            agent.destination = transform.position + new Vector3(randomizedTarget.x, 0, randomizedTarget.y);
+            agent.destination = transform.position;
         }
+        // Reset the loop
         StartCoroutine(TargetLoop());
     }
 

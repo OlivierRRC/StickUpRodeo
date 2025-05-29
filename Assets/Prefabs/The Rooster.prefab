@@ -301,9 +301,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8567774127446830089, guid: 7a75f7f83a2df9447ac31998618b05d3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3450490387723025048}
-    - targetCorrespondingSourceObject: {fileID: 8567774127446830089, guid: 7a75f7f83a2df9447ac31998618b05d3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2336763590346563560}
   m_SourcePrefab: {fileID: 100100000, guid: 7a75f7f83a2df9447ac31998618b05d3, type: 3}
 --- !u!1 &1548921130916191642 stripped
 GameObject:
@@ -326,30 +323,10 @@ MonoBehaviour:
   damage: 7
   attackSpeed: 0.5
   attackRange: 10
-  gore: {fileID: 3023360309793157011, guid: bd74907117753314f8a827eae4a9fc18, type: 3}
   sightRange: 14
+  gore: {fileID: 3023360309793157011, guid: bd74907117753314f8a827eae4a9fc18, type: 3}
   alerted: 0
   shotPrefab: {fileID: 6062483158155675385, guid: 966beb58d1696b04baa979d250a9a5f8, type: 3}
---- !u!114 &2336763590346563560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1548921130916191642}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b365b105de98f14687416aaa87eca3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  voice: {fileID: 7145309153723363287}
-  killVoiceLines: []
-  reloadVoiceLines: []
-  damageVoiceLines:
-  - {fileID: 8300000, guid: 28f2a9b5193eeaf42bf09612f5b5f06e, type: 3}
-  - {fileID: 8300000, guid: ee310274b29e4bb4688277dc334b2164, type: 3}
-  - {fileID: 8300000, guid: 17c8c4174afc38942aece83e396f29f7, type: 3}
-  - {fileID: 8300000, guid: af5dff01a63921840949ddc32741909e, type: 3}
 --- !u!4 &1695797548508296629 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8363369507817489446, guid: 7a75f7f83a2df9447ac31998618b05d3, type: 3}

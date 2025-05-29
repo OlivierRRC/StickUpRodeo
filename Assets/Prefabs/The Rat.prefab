@@ -688,8 +688,8 @@ MonoBehaviour:
   damage: 3
   attackSpeed: 1
   attackRange: 2
-  gore: {fileID: 3023360309793157011, guid: bd74907117753314f8a827eae4a9fc18, type: 3}
   sightRange: 11
+  gore: {fileID: 3023360309793157011, guid: bd74907117753314f8a827eae4a9fc18, type: 3}
   alerted: 0
 --- !u!136 &6096070657059028720
 CapsuleCollider:
@@ -792,7 +792,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8567774127446830089}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b365b105de98f14687416aaa87eca3d, type: 3}
   m_Name: 

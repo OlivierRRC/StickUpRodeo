@@ -18,20 +18,24 @@ public class VoiceLineManager : MonoBehaviour
 
     }
 
+    // All of these "playVoiceLine" functions work basically the same, so I'll walk you through the first one.
     public void playKillVoiceLine(AudioClip[] enemyKillLines)
     {
+        // Different Enemies have kill voice lines specific to their type
+        // to make use of those, this function takes an array of lines from the enemy who initiated it.
+
+        // We then take those lines and the general use kill lines and put them both into one array.
         UsableKillVoiceLines = killVoiceLines.Concat<AudioClip>(enemyKillLines).ToArray();
-        if (!voice.isPlaying)
+        // If the Player is speaking, return the function early.
+        if (voice.isPlaying) { return; }
+        else
         {
-            if (UnityEngine.Random.Range(0, 1) != 0)
-            {
-                return;
-            }
+            // Otherwise, give the line a 50% chance to play or return the function early
+            if (UnityEngine.Random.Range(0, 1) != 0) { return; }
+            // Pick a random voice line, assign it to the player's voice and play it.
             if (killVoiceLines.Length > 0)
             {
                 int index = UnityEngine.Random.Range(0, UsableKillVoiceLines.Length);
-                // AudioSource.PlayClipAtPoint(killVoiceLines[index], Camera.main.transform.position);
-
                 voice.clip = UsableKillVoiceLines[index];
                 voice.Play();
             }
@@ -40,18 +44,15 @@ public class VoiceLineManager : MonoBehaviour
 
     public void playReloadVoiceLine()
     {
-        if (!voice.isPlaying)
+        if (voice.isPlaying) { return; }
+        else
         {
-            if (UnityEngine.Random.Range(0, 3) == 0)
-            {
-                return;
-            }
+            // This one is a 25% because it plays a lot more often
+            if (UnityEngine.Random.Range(0, 3) == 0) { return; }
 
             if (reloadVoiceLines.Length > 0)
             {
                 int index = UnityEngine.Random.Range(0, reloadVoiceLines.Length);
-                // AudioSource.PlayClipAtPoint(reloadVoiceLines[index], Camera.main.transform.position);
-
                 voice.clip = reloadVoiceLines[index];
                 voice.Play();
             }
@@ -60,18 +61,14 @@ public class VoiceLineManager : MonoBehaviour
 
     public void playDamageVoiceLine()
     {
-        if (!voice.isPlaying)
+        if (voice.isPlaying) { return; }
+        else
         {
-            if (UnityEngine.Random.Range(0, 1) != 0)
-            {
-                return;
-            }
+            if (UnityEngine.Random.Range(0, 1) != 0) { return; }
 
             if (damageVoiceLines.Length > 0)
             {
                 int index = UnityEngine.Random.Range(0, damageVoiceLines.Length);
-                // AudioSource.PlayClipAtPoint(damageVoiceLines[index], Camera.main.transform.position);
-
                 voice.clip = damageVoiceLines[index];
                 voice.Play();
             }
