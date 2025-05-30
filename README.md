@@ -11,7 +11,7 @@ Thus, Stick Up Rodeo was born. A first person shooter game where you and your ho
 Version 1 was created in three feverish days with the full power of our entire team backing it, and was released to a room full of laughter when it was presented to the other participants.
 It took place in a combat arena and the main goal was to survive a horde of glue factory employees as they chased you forever.
 
-Version 2 is a complete remaster sticking with the spirit of the original. This time around you must fight your way through a level, hunting down the evil factory workers (with improved AI) before reaching the end and rescuing your darling Princess.
+Version 2 is a complete remaster by Jake (with some help here and there from Olivier and Rain) sticking with the spirit of the original. This time around you must fight your way through a level, hunting down the evil factory workers (with improved AI) before reaching the end and rescuing your darling Princess.
 
 ## DOWNLOAD INSTRUCTIONS
 - To get the Unity Project, just download the repository and import the files into the engine.
