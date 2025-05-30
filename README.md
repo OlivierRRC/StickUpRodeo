@@ -21,7 +21,7 @@ Version 2 is a complete remaster by Jake (with some help here and there from Oli
 
 All of the relevant project code is annotated and exists inside of the [_scripts_](Assets/Scripts) folder.
 
-The base of the code was largely written by Olivier, with additions to function and annotations made by Jake.
+The base of the code was largely written by Olivier, with some sizable additions to function and annotations made by Jake for Version 2.
 If you'd like to review the key parts, feel free to poke around in there, but if you'd like some direction to the important stuff, here are some recommendations:
 
 - [**OlivierPlayerMove**](Assets/Scripts/OlivierPlayerMove.cs):
