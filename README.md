@@ -13,6 +13,9 @@ It took place in a combat arena and the main goal was to survive a horde of glue
 
 Version 2 is a complete remaster sticking with the spirit of the original. This time around you must fight your way through a level, hunting down the evil factory workers (with improved AI) before reaching the end and rescuing your darling Princess.
 
+## DOWNLOAD INSTRUCTIONS
+- To get the Unity Project, just download the repository and import the files into the engine.
+- To Download the game, you can grab it from the [**itch.io**](https://heliturtleop.itch.io/stickup-rodeo) page
 
 ## TO REVIEW THE CODE
 
