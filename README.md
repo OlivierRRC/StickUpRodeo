@@ -16,19 +16,19 @@ Version 2 is a complete remaster sticking with the spirit of the original. This 
 
 ## TO REVIEW THE CODE
 
-All of the relevant project code is annotated and exists inside of the [_scripts_](url) folder.
+All of the relevant project code is annotated and exists inside of the [_scripts_](Assets/Scripts) folder.
 
 The base of the code was largely written by Olivier, with additions to function and annotations made by Jake.
 If you'd like to review the key parts, feel free to poke around in there, but if you'd like some direction to the important stuff, here are some recommendations:
 
-- [**OlivierPlayerMove**](url):
+- [**OlivierPlayerMove**](Assets/Scripts/OlivierPlayerMove.cs):
   - While the project was starting, Olivier and Jake worked in seperate movement scripts to prevent conflicts. Once Jake started to work on sound, Olivier's script became the main one.
   - Handles all player activity.
-- [**VoiceLineManager**](url):
+- [**VoiceLineManager**](Assets/VoiceLineManager.cs):
   - Handles the selection and playing of randomized voice lines for getting hit, killing an enemy or reloading.
-- [**EnemyBase**](url):
+- [**EnemyBase**](Assets/Scripts/EnemyBase.cs):
   - Handles the fundamentals of all enemy behaviour, acts as a base for the other enemy scripts.
-- [**Rat**](url), [**Ox**](url) and [**Rooster**](url):
+- [**Rat**](Assets/Scripts/Rat.cs), [**Ox**](Assets/Scripts/Ox.cs) and [**Rooster**](Assets/Scripts/Rooster.cs):
   - Each one is an individual enemy type built off of the EnemyBase script.
 
 
